@@ -1,0 +1,40 @@
+{
+  "authentication": {
+    "token": "",
+    "google": "",
+    "github": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  "cloudant": {
+    "account": "",
+    "password": ""
+  },
+  "dialog": {
+    "url": "https://gateway.watsonplatform.net/dialog/api",
+    "username": "a",
+    "password": "",
+    "version": "v1",
+    "dialog_id": ""
+  },
+  "speech_to_text": {
+    "url": "https://stream.watsonplatform.net/speech-to-text/api",
+    "username": "",
+    "password": "",
+    "version": "v1"
+  },
+  "text_to_speech": {
+    "version": "v1",
+    "username": "",
+    "password": "",
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "aws_s3_bucket": "faqhub",
+    "cloudconvert": ""
+  },
+  "translation": {
+    "username": "",
+    "password": "",
+    "version": "v2"
+  }
+}

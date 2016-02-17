@@ -1,0 +1,48 @@
+<md-dialog aria-label="key" ng-cloak flex="percentage">
+    <form name="EntityItem">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Item</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="closeItem()" aria-label="Close">
+                    <i class="icon ion-close"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-progress-linear md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout="column" layout-xs="column">
+
+                <md-input-container class="md-block">
+                    <label>Question(s)</label>
+                    <input ng-model="item.question" type="text">
+                    <small>
+                        Use <b>semicolons ( ; )</b> to separate multiple questions . For better questions you can use
+                        <b>wilcards</b>, check the <a href="#/base/help">help</a>for more info.
+                    </small>
+                </md-input-container>
+
+
+                <md-input-container class="md-block">
+                    <label>Answer</label>
+                    <textarea ng-model="item.answer" rows="10" md-select-on-focus></textarea>
+                </md-input-container>
+
+            </div>
+
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button class="md-warn" ng-click="deleteItem(item)" ng-if="item._id">
+                Delete
+            </md-button>
+            <md-button ng-click="saveItem(item)" type="submit" ng-if="item.question && item.answer">
+                Save
+            </md-button>
+            <md-button ng-click="saveItem(item,true)" style="margin-right:20px;" ng-if="item.question && item.answer">
+                Save and Insert Next
+            </md-button>
+        </md-dialog-actions>
+
+    </form>
+</md-dialog>

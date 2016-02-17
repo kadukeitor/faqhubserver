@@ -1,0 +1,57 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2 style="margin: auto;">
+            Topics
+        </h2>
+    </div>
+</md-toolbar>
+
+<md-progress-linear md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+
+<div layout="column" flex id="content" layout-align="center center">
+
+    <p style="padding: 0 10px;text-align: center">
+        You can create your topics or read those created by others
+    </p>
+
+    <div layout="row" layout-wrap style="width: 100%;">
+        <div flex></div>
+        <div flex="66" flex-xs="100">
+
+            <md-input-container class="md-icon-float md-block search" style="margin-bottom: 0;padding-right: 8px;">
+                <label>Search</label>
+                <md-icon aria-label="Search" class="md-icon-button">
+                    <i class="icon ion-android-search"></i>
+                </md-icon>
+                <input ng-model="search" type="text">
+            </md-input-container>
+
+            <md-card>
+                <md-card-content style="padding: 0 ;">
+                    <md-list ng-cloak style="padding: 0;">
+                        <md-list-item ng-repeat="entity in entities | filter:search" ng-click="edit(entity)">
+                            <md-icon aria-label="Logo" class="md-icon-button">
+                                <i class="icon"
+                                   ng-class="{ 'ion-android-done-all' : entity.approved,'ion-android-time' : !entity.approved }"></i>
+                            </md-icon>
+                            <p>
+                                {{ entity.name }}
+                                <span class="md-body-2" ng-if="entity.user == profile._id">(admin)</span>
+                            </p>
+                            <!--<p class="md-secondary md-caption">Updated {{ entity.updated | date }}</p>-->
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex></div>
+    </div>
+
+</div>
+
+<md-button class="md-fab md-warn md-bottom-corner" aria-label="New" ng-click="new()">
+    <md-tooltip md-direction="left">
+        New Topic
+    </md-tooltip>
+    <i class="icon ion-android-add"></i>
+</md-button>

@@ -1,0 +1,30 @@
+<md-dialog aria-label="key" ng-cloak flex="percentage">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Languages</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="close()" aria-label="Close">
+                <i class="icon ion-close"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="column" layout-xs="column">
+            <md-input-container class="md-icon-float md-block search" style="margin-bottom: 0;padding-right: 8px;">
+                <label>Search</label>
+                <md-icon aria-label="Search" class="md-icon-button">
+                    <i class="icon ion-android-search"></i>
+                </md-icon>
+                <input ng-model="search" type="text">
+            </md-input-container>
+            <md-list ng-cloak style="padding: 0;">
+                <md-list-item ng-repeat="lang in languages | filter:search" ng-click="select(lang.language)">
+                    <p>
+                        {{ lang.name }}
+                    </p>
+                    <i class="md-secondary icon ion-android-done" ng-if="lang.language == language"></i>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-dialog-content>
+</md-dialog>

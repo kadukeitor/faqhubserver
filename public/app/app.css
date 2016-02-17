@@ -1,0 +1,70 @@
+/*New*/
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.muted {
+    color: #999;
+}
+
+/*Custom*/
+
+.search {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.search .md-icon-button {
+    top: 5px;
+    left: 10px;
+}
+
+.search .md-errors-spacer {
+    display: none;
+}
+
+/*Ionicons Integration*/
+
+i {
+    font-size: 24px !important;
+}
+
+.md-icon-button {
+    margin-right: 18px !important;
+    margin-top: 0 !important;
+}
+
+/*Float Button*/
+
+.md-bottom-corner {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+/*Dialog*/
+
+form[name=Message] .md-errors-spacer {
+    display: none;
+}
+
+.card {
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.in {
+    padding: 0 10px;
+}
+
+.in > .card {
+    margin-left: auto;
+    margin-right: 5px;
+    background-color: rgb(63, 81, 181);
+    color: white;
+}

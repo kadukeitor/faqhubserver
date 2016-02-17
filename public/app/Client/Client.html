@@ -1,0 +1,81 @@
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <h1>
+            <i class="icon ion-android-bulb"></i>
+            <span hide-xs>Faq<b>Hub</b> - Client</span>
+        </h1>
+        <span flex></span>
+        <md-button aria-label="Reload" ng-click="manager()">
+            Open Editor
+            <md-tooltip md-direction="bottom">
+                Open Editor
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Reload" ng-click="reload()">
+            <i class="icon ion-android-refresh"> </i>
+            <md-tooltip md-direction="bottom">
+                Reload
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Reload" ng-click="showLanguages()">
+            <i class="icon ion-android-globe"> </i>
+            <md-tooltip md-direction="bottom">
+                Change Language
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Talk" ng-click="toggleTalk()">
+            <i class="icon" ng-class="{'ion-android-volume-off':!talk,'ion-android-volume-up':talk}"> </i>
+            <md-tooltip md-direction="bottom">
+                Talk
+            </md-tooltip>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div flex style="background: #eee;overflow: auto" layout="row">
+
+    <div flex></div>
+    <md-card flex="66" flex-xs="100">
+        <md-card-content style="overflow: auto;margin-bottom: 60px;margin-top: 10px;" id="messages">
+            <div ng-repeat="message in messages" class="dialog-card" ng-class="{'in': (message.type==1)}">
+                <div class="card" style="border-radius: 8px;display: table;margin-bottom: 24px;">
+                    <i class="icon ion-android-bulb" ng-if="message.type==1"
+                       style="font-weight: bolder;font-size: 20px;"> </i>
+                    {{ message.text}}
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+    <div flex></div>
+
+</div>
+
+<div layout="row" style="margin-top: -52px;padding: 0 32px;margin-bottom: 24px;">
+    <div flex></div>
+    <div flex="66" flex-xs="100">
+        <form name="Message" style="height: 30px;">
+            <md-progress-linear ng-show="busy" md-mode="indeterminate"></md-progress-linear>
+            <md-input-container ng-hide="busy" class="md-block"
+                                style="padding: 0 40px 0 0;margin: 0;background-color: white">
+                <label>Question</label>
+                <input ng-model="message.text" id="input" type="text" tabindex="-1">
+                <md-button class="md-fab md-mini md-primary" ng-class="{'md-warn':listening}" aria-label="Speak"
+                           ng-mousedown="startListen()"
+                           ng-mouseup="stopListen()"
+                           style="margin-right: 0;position: absolute;margin-top: -10px;">
+                    <md-tooltip md-direction="top" md-visible>
+                        Press to talk
+                    </md-tooltip>
+                    <i class="icon ion-mic-a"></i>
+                </md-button>
+            </md-input-container>
+            <input type="submit" ng-click="send(message)"
+                   style="opacity: 0;position: absolute;top: 0;left: 0;"/>
+        </form>
+    </div>
+    <div flex></div>
+</div>
+
+<audio id="audio" class="audio" style="display: none;">
+    Your browser does not support the audio element.
+</audio>

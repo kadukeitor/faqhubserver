@@ -1,0 +1,14 @@
+applications:
+- services:
+  - dialog-service
+  - text-to-speech-service
+  - speech-to-text-service
+  - translation-service
+  - single-sign-on-service
+  - cloudant-service
+  name: faqhub
+  command: node app.js
+  path: .
+  memory: 512M
+  env:
+    NODE_ENV: production

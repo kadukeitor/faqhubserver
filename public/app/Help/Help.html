@@ -1,0 +1,126 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Back" ng-click="back()">
+            <i class="icon ion-android-arrow-back"> </i>
+        </md-button>
+        <h2 style="margin: auto;padding-right: 40px;">
+            Help
+        </h2>
+    </div>
+</md-toolbar>
+
+<div layout="column" flex id="content" layout-align="center center">
+
+    <div layout="row" layout-wrap style="width: 100%;">
+        <div flex></div>
+        <div flex="66" flex-xs="100">
+
+
+            <md-card>
+                <md-card-content>
+
+                    <h3>Dialog Update</h3>
+
+                    <p>Last update on : <b>{{ last_update | date:'medium' }}</b></p>
+
+                    <h3>Wildcards</h3>
+
+                    <dl class="dl">
+                        <dt class="dt dlterm">Asterisk (*)</dt>
+                        <dd class="dd">Replaces a word or set of words in the position the * occupies. <p class="p">For
+                            example, "What is *
+                            dialog" matches the following variations:</p>
+                            <ul class="bullets">
+                                <li><p></p>
+
+                                    <p class="p">"What is a dialog"</p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">"What is this thing called a dialog"</p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">"What is the meaning of a dialog" </p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">And so on</p>
+
+                                    <p></p></li>
+                            </ul>
+                            <p class="p">The asterisk tells the system that the number of words between "is" and
+                                "Dialog" do not matter. Users need to type only the sentence that begins
+                                with "what is" and ends with "Dialog."</p>
+
+                            <p class="p">However, if you place an
+                                asterisk it does not match to a sentence where there aren't any words in
+                                place of the asterisk. For example, "What is dialog" does not match to "What
+                                is * dialog". The asterisk is used to indicate that a word, or words, must
+                                occupy that space.</p>
+                        </dd>
+                        <dt class="dt dlterm">Dollar sign ($)</dt>
+                        <dd class="dd"><p class="p">Indicates that the phrase after it must appear exactly as
+                            it is written, but any words can precede it or follow it.</p>
+
+                            <p class="p">For example, "$ is a dialog" matches the following variations:</p>
+                            <ul class="bullets">
+                                <li><p></p>
+
+                                    <p class="p">"So, can you tell me what is a dialog, please"</p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">"I've heard about virtual agents, but is a dialog one of those"</p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">"Tell me, is a dialog something I can create"</p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">"Is a dialog something I can use for my business"</p>
+
+                                    <p></p></li>
+                                <li><p></p>
+
+                                    <p class="p">And so on</p>
+
+                                    <p></p></li>
+                            </ul>
+                            <p class="p">Each example has the exact phrase "is a dialog" in it. If the phrase doesn't
+                                appear in the
+                                user's text exactly as it was written after the dollar sign, a match is not
+                                made.</p>
+
+                            <div class="note tip" id="layout_input__input_tip"><span class="tiptitle">Tip:</span>
+
+                                <p class="p">Always use correct grammar, spelling,
+                                    and punctuation in the primary version because it can be shown to
+                                    the user during Auto-learn, and being correct looks professional.</p>
+                            </div>
+                        </dd>
+                        <dt class="dt dlterm">Combinations of wildcards</dt>
+                        <dd class="dd"><p class="p">You can use both wildcards together too. For example, the variation
+                            "$ what is * Dialog" matches
+                            a greater variety of user text to the input. However, be careful when you
+                            use wildcards, especially the asterisk, because users can ask questions that
+                            might be different from the meaning of the specific input. For example, "$
+                            what is * dialog" can also match to the question "So what is a dialog, can I
+                            use it to cheat on an exam".</p>
+                        </dd>
+                    </dl>
+
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex></div>
+    </div>
+
+</div>

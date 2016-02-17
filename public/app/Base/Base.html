@@ -1,0 +1,54 @@
+<md-toolbar layout="row" style="background:transparent;color: black;">
+    <div class="md-toolbar-tools">
+        <h1>
+            <a href="#/base/entities">
+                <i class="icon ion-android-bulb"></i>
+                <span hide-xs>Faq<b>Hub</b> - Editor
+                </span>
+            </a>
+        </h1>
+        <span flex></span>
+
+        <md-button aria-label="Reload" ng-click="goToClient()">
+            Open Client
+            <md-tooltip md-direction="bottom">
+                Client
+            </md-tooltip>
+        </md-button>
+
+        <md-button aria-label="Help" class="md-icon-button" ng-click="goToHelp()">
+            <md-tooltip md-direction="bottom">
+                Help
+            </md-tooltip>
+            <i class="icon ion-help-circled"></i>
+        </md-button>
+
+        <md-menu md-position-mode="target-right target">
+            <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <img ng-src="{{profile.picture}}" ng-show="profile.picture"
+                     style="width: 40px;margin-left: -8px;margin-top: -8px;">
+                <i class="icon ion-android-person" ng-hide="profile.picture"></i>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <div layout="row">
+                        <b flex>{{ profile.displayName }}</b>
+                    </div>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="logout()">
+                        <div layout="row">
+                            <p flex>Logout</p>
+                        </div>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+        <!--<md-button aria-label="Logout" ng-click="logout()">Logout</md-button>-->
+    </div>
+</md-toolbar>
+
+<div flex id="content" style="background: #eee;overflow: auto" ui-view="base">
+
+</div>

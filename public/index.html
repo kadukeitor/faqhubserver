@@ -1,0 +1,62 @@
+<!doctype html >
+<html ng-app="FaqHub">
+<head>
+    <title>FaqHub</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="lib/animate.css/animate.min.css"/>
+    <link rel="stylesheet" href="lib/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="lib/Ionicons/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="app/app.css"/>
+
+</head>
+
+<body ng-cloak layout="column" ui-view style="overflow-x:hidden;">
+
+<!-- Application Dependencies -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-ui/build/angular-ui.min.js"></script>
+<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="lib/angular-animate/angular-animate.js"></script>
+<script src="lib/angular-aria/angular-aria.js"></script>
+<script src="lib/angular-messages/angular-messages.js"></script>
+<script src="lib/angular-material/angular-material.js"></script>
+<script src="lib/satellizer/satellizer.js"></script>
+<script src="lib/jquery/dist/jquery.min.js"></script>
+
+<!-- Application Scripts -->
+<script src="app/app.js"></script>
+
+<!--Modules-->
+
+<!--Client-->
+<script src="app/Client/Client.js"></script>
+<script src="app/Client/ClientControllers.js"></script>
+<script src="app/Client/ClientServices.js"></script>
+<script src="app/Client/Microphone.js"></script>
+<script src="app/Client/SocketServices.js"></script>
+<!--Login-->
+<script src="app/Login/Login.js"></script>
+<script src="app/Login/LoginControllers.js"></script>
+<script src="app/Login/LoginServices.js"></script>
+<!--Base-->
+<script src="app/Base/Base.js"></script>
+<script src="app/Base/BaseControllers.js"></script>
+<!--Entities-->
+<script src="app/Entities/Entities.js"></script>
+<script src="app/Entities/EntitiesControllers.js"></script>
+<script src="app/Entities/EntitiesServices.js"></script>
+<!--Help-->
+<script src="app/Help/Help.js"></script>
+<script src="app/Help/HelpControllers.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+{
+  "name": "FaqHubServer",
+  "version": "0.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=0.10.38"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watson-developer-cloud/dialog-nodejs.git"
+  },
+  "author": "IBM Corp.",
+  "contributors": [
+    {
+      "name": "James Zhang",
+      "email": "jzhang300@us.ibm.com"
+    },
+    {
+      "name": "Eva Xiaohui Luo",
+      "email": "evaluo_xhl@us.ibm.com"
+    },
+    {
+      "name": "German Attanasio Ruiz",
+      "email": "germanatt@us.ibm.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/watson-developer-cloud/dialog-nodejs/issues"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "aws-sdk": "^2.2.33",
+    "bcrypt": "^0.8.5",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "~1.14.1",
+    "cloudant": "^1.4.1",
+    "cloudconvert": "^1.0.4",
+    "colors": "^1.1.2",
+    "cookie-parser": "^1.4.1",
+    "cors": "^2.7.1",
+    "errorhandler": "~1.4.1",
+    "express": "~4.13.3",
+    "express-crud": "^4.0.1",
+    "express-session": "^1.13.0",
+    "jwt-simple": "^0.4.1",
+    "moment": "^2.11.2",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-idaas-openidconnect": "^1.0.0",
+    "watson-developer-cloud": "~1.0.6",
+    "xml2js": "^0.4.16"
+  }
+}

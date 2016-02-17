@@ -1,0 +1,66 @@
+<div flex layout="column" layout-align="center center" role="main" class="Login"">
+
+<!--Content-->
+
+<md-content class="md-padding" style="background: transparent;text-align: center;">
+
+    <i class="icon ion-android-bulb" style="font-size: 128px!important;color: rgb(63,81,181)"></i>
+
+    <p>Open <b>FaqHub</b> in your favorite platform.</p>
+
+    <md-button class="md-fab md-primary" aria-label="Web" ng-click="client('web')">
+        <md-tooltip md-direction="bottom">
+            Web
+        </md-tooltip>
+        <i class="icon ion-android-laptop"></i>
+    </md-button>
+
+    <md-button class="md-fab" aria-label="Android" style="background: rgb(104, 159, 56);" ng-click="client('android')">
+        <md-tooltip md-direction="bottom">
+            Android
+        </md-tooltip>
+        <i class="icon ion-social-android" style="font-size: 32px !important;"></i>
+    </md-button>
+
+    <md-button class="md-fab" aria-label="iOS" style="background: rgba(0,0,0,0.8);">
+        <md-tooltip md-direction="bottom">
+            iOS ( in progress )
+        </md-tooltip>
+        <i class="icon ion-social-apple" style="font-size: 32px !important;"></i>
+    </md-button>
+
+    <p>Or</p>
+
+    <p class="md-caption">Login to the <b>Editor</b></p>
+
+    <md-button class="md-fab md-warn" aria-label="Google" ng-click="authenticate('google')">
+        <md-tooltip md-direction="bottom">
+            Google
+        </md-tooltip>
+        <i class="icon ion-social-googleplus"></i>
+    </md-button>
+
+    <md-button class="md-fab" aria-label="GitHub" ng-click="authenticate('github')" style="background: black;">
+        <md-tooltip md-direction="bottom">
+            GitHub
+        </md-tooltip>
+        <i class="icon ion-social-github"></i>
+    </md-button>
+
+    <md-button class="md-fab" aria-label="Facebook" ng-click="authenticate('facebook')" style="background: #3a5795;">
+        <md-tooltip md-direction="bottom">
+            Facebook
+        </md-tooltip>
+        <i class="icon ion-social-facebook"></i>
+    </md-button>
+
+    <md-button class="md-fab" aria-label="LinkedIn" ng-click="authenticate('linkedin')" style="background: #287bbc;">
+        <md-tooltip md-direction="bottom">
+            LinkedIn
+        </md-tooltip>
+        <i class="icon ion-social-linkedin"></i>
+    </md-button>
+
+</md-content>
+
+</div>

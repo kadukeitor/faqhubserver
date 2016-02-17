@@ -1,0 +1,109 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Back" ng-click="back()">
+            <i class="icon ion-android-arrow-back"> </i>
+        </md-button>
+        <h2 style="margin: auto;padding-right: 40px;">
+            {{ entity.name }}
+        </h2>
+    </div>
+</md-toolbar>
+
+<md-progress-linear md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+
+<div layout="column" flex id="content" layout-align="center center" ng-hide="loading">
+
+    <p>Stack of Frequently Asked Questions</p>
+
+
+    <div layout="row" layout-wrap style="width: 100%;">
+        <div flex></div>
+        <div flex="66" flex-xs="100">
+
+
+            <md-input-container class="md-icon-float md-block search" style="margin-bottom: 0;padding-right: 8px;"
+                                ng-show="entity.items.length">
+                <label>Search</label>
+                <md-icon aria-label="Search" class="md-icon-button">
+                    <i class="icon ion-android-search"></i>
+                </md-icon>
+                <input ng-model="search" type="text">
+            </md-input-container>
+
+
+            <md-card>
+                <md-card-content style="padding: 0 ;">
+
+                    <div style="padding: 10px 16px 0;">
+
+                        <form name="Entity">
+
+
+                            <div class="left" flex ng-if="entity._id">
+
+                                <p ng-hide="profile.isAdmin">
+                                    <b>{{ entity.approved ? 'Approved' : 'On Revision'}}</b>
+                                </p>
+
+                                <md-switch ng-show="profile.isAdmin"
+                                           ng-model="entity.approved" aria-label="Approval" class="md-primary">
+                                    <b>{{ entity.approved ? 'Approved' : 'On Revision'}}</b>
+                                </md-switch>
+
+                            </div>
+
+
+                            <md-input-container class="md-block">
+                                <label>Name</label>
+                                <input ng-model="entity.name" type="text" ng-disabled="!canUpdate">
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Keywords</label>
+                                <input ng-model="entity.keywords" type="text" ng-disabled="!canUpdate">
+                                <small>
+                                    Use <b>semicolons ( ; )</b> to separate multiple keywords.
+                                </small>
+                            </md-input-container>
+
+                            <div class="right">
+                                <md-button class=" md-warn" ng-if="entity._id && canUpdate"
+                                           ng-click="delete($event,entity)">Delete
+                                </md-button>
+                                <md-button class=" md-primary" type="submit" ng-click="save(entity)"
+                                           ng-if="canUpdate && entity.name">
+                                    Save
+                                </md-button>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+
+                    <md-subheader class="md-primary" ng-if="entity.items.length">Items</md-subheader>
+                    <md-list ng-cloak style="padding: 0;">
+                        <md-list-item class="md-3-line"
+                                      ng-repeat="item in entity.items | filter:search"
+                                      ng-click="edit(item)">
+                            <div class="md-list-item-text" layout="column">
+                                <h3>{{ item.question }}</h3>
+
+                                <p>{{ item.answer }}</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex></div>
+    </div>
+
+</div>
+
+<md-button class="md-fab md-warn md-bottom-corner" aria-label="Add" ng-click="new()" ng-show="entity._id && canUpdate">
+    <md-tooltip md-direction="left">
+        Add Item
+    </md-tooltip>
+    <i class="icon ion-android-add"></i>
+</md-button>
